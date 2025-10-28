@@ -13,21 +13,25 @@ rValue = random.randint(2, 255)
 gValue = random.randint(2, 255)
 bValue = random.randint(2, 255)
 
-l = Label(window, text=f"R: {rValue}")
-l2 = Label(window, text=f"G: {gValue}")
-l3 = Label(window, text=f"B: {bValue}")
+top = Frame(window, bg="red")
 
+l = Label(top,text=f"R: {rValue}",   height=5)
+l2 = Label(top, text=f"G: {gValue}", height=5)
+l3 = Label(top, text=f"B: {bValue}", height=5)
 l.config(font=("Sans-seif", 20), bg="red")
 l2.config(font=("Sans-seif", 20), bg="red")
 l3.config(font=("Sans-seif", 20), bg="red")
 
-window.geometry(f"{int(geo.getX())}x{int(geo.getY())}")
-window.configure(background=f"red")
-sizeable = Resize(False, False)
+top.pack(fill="none", pady=5, padx=70)
 
 l.pack()
 l2.pack()
 l3.pack()
+
+window.geometry(f"{int(geo.getX())}x{int(geo.getY())}")
+window.configure(background="red")
+sizeable = Resize(False, False)
+
 
 
 window.resizable(sizeable.getRightOption(), sizeable.getLeftOption())
