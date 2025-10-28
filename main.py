@@ -17,14 +17,18 @@ l = Label(window, text=f"R: {rValue}")
 l2 = Label(window, text=f"G: {gValue}")
 l3 = Label(window, text=f"B: {bValue}")
 
-l.config(font=("Sans-seif", 30))
-l2.config(font=("Sans-seif", 30))
-l3.config(font=("Sans-seif", 30))
-
+l.config(font=("Sans-seif", 20), bg="red")
+l2.config(font=("Sans-seif", 20), bg="red")
+l3.config(font=("Sans-seif", 20), bg="red")
 
 window.geometry(f"{int(geo.getX())}x{int(geo.getY())}")
-window.configure(background="red")
+window.configure(background=f"red")
 sizeable = Resize(False, False)
+
+l.pack()
+l2.pack()
+l3.pack()
+
 
 window.resizable(sizeable.getRightOption(), sizeable.getLeftOption())
 window.mainloop()
